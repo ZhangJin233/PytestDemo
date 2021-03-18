@@ -1,0 +1,17 @@
+---
+tests:
+- case: 验证响应中start和count与请求中的参数一致
+  http: https://api.caiyunapp.com
+    method: GET
+    path: /v2.5/OH0Toat4=ZPjB1OU/121.6544,25.1552/weather.json
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36
+    params:
+      apikey: 0df993c66c0c636e29ecbb5344252a4a
+      start: 0
+      count: 10
+  expected:
+    response:
+      title: 正在上映的电影-上海
+      count: 10
+      start: 0
